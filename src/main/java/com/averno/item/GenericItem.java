@@ -17,12 +17,29 @@ public class GenericItem extends Item {
 	 * este valor valga 1.</br> - setCreativeTab() Establece en qué pestaña del
 	 * modo creativo se situará el objeto.</br> - setUnlocalizedName() Establece
 	 * el nombre interno del objeto (no el que se verá por el usuario), no puede
-	 * tener espacios.
+	 * tener espacios, sirve para hacer referencia al nombre que verá el
+	 * usuario, definido en el archivo de idioma.
 	 */
 	public GenericItem() {
 		setMaxStackSize(64);
 		setCreativeTab(CreativeTabs.tabMisc);
 		setUnlocalizedName("genericItem");
+	}
+
+	/**
+	 * Constructor recibiendo parámetros. Esto permite crear diferentes objetos
+	 * desde la misma clase.
+	 * 
+	 * @param maxStackSize
+	 * @param tab
+	 * @param texture
+	 * @param name
+	 */
+	public GenericItem(int maxStackSize, CreativeTabs tab, int texture,
+			String name) {
+		setMaxStackSize(maxStackSize);
+		setCreativeTab(tab);
+		setUnlocalizedName(name);
 	}
 
 }

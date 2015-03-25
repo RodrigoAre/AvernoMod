@@ -25,6 +25,8 @@ public class Registro {
 	 */
 	public static void iniciar() {
 		item1 = new GenericItem();
+		genericIngot = new GenericItem(16, CreativeTabs.tabMisc, 1,
+				"genericIngot");
 		registrar();
 	}
 
@@ -37,6 +39,7 @@ public class Registro {
 	 * item1.
 	 */
 	public static void registrar() {
-		GameRegistry.registerItem(item1, "item1");
+		GameRegistry.registerItem(item1, "genericItem");
+		GameRegistry.registerItem(genericIngot, "genericIngot");
 	}
 }
