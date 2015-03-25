@@ -1,0 +1,53 @@
+package com.averno.base;
+
+import com.averno.proxy.ServerProxy;
+
+import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.Mod.EventHandler;
+import cpw.mods.fml.common.Mod.Instance;
+import cpw.mods.fml.common.SidedProxy;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+
+/**
+ * 
+ * @author darkraksis Anotación mod:</br> - Mod = Le dice a Forge que esta es la
+ *         clase base del mod. Recibe los siguientes parámetros:</br> 1.- modid
+ *         = El nombre único de tu mod, no debe cambiar una vez se haya
+ *         lanzado.</br> 2.- name = El nombre que verán los usuarios para tu
+ *         mod.</br> 3.- version = La versión de tu mod.
+ */
+@Mod(modid = Averno.MODID, name = "Averno", version = Averno.VERSION)
+public class Averno {
+
+	public static final String MODID = "Averno01";
+	public static final String VERSION = "0.0.0";
+
+	@Instance(value = MODID)
+	public static Averno instance;
+
+	/**
+	 * Esta anotación le dice a Forge qué debe cargar dependiendo de si el mod es cargado desde el lado del cliente o
+	 * o desde el servidor.</br>
+	 * Dependiendo de cuál sea la carga que deba hacer invocará a una clase distinta:</br>
+	 * - clientSide: clase con la carga del cliente.</br>
+	 * - serverSide: clase con la carga del servidor.</br>
+	 * @see ServerProxy
+	 */
+	@SidedProxy(clientSide = "com.averno.proxy.ClientProxy", serverSide = "com.averno.proxy.ServerProxy")
+	public static ServerProxy proxy;
+
+	@EventHandler
+	public void preInit(FMLPreInitializationEvent event) {
+	}
+
+	@EventHandler
+	public void load(FMLInitializationEvent event) {
+		proxy.registerRenderers();
+	}
+
+	@EventHandler
+	public void postInit(FMLPostInitializationEvent event) {
+	}
+}

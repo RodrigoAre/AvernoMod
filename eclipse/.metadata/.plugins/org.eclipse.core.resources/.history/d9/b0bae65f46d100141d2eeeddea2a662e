@@ -1,0 +1,33 @@
+package com.averno.blocks;
+
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+import net.minecraft.creativetab.CreativeTabs;
+
+import com.averno.util.BaseBlock;
+
+public class Azufre extends BaseBlock{
+
+	protected Azufre(Material material) {
+		super(material);
+	}
+	
+	public static Azufre nuevoAzufre() {
+		Azufre azufre = new Azufre(Material.rock);
+		//Marca la dureza del bloque, 0.5f es tierra y 50f es obsidiana 
+		//El agua y la lava tienen 100, la piedra madre infinito.
+		azufre.setHardness(15f);
+		//Marca el sonido que emitira el bloque al ser pisado por un personaje.
+		azufre.setStepSound(Block.soundTypeStone);
+		//Marca el tab por el que el bloque sera visualizado en el modo creativo.
+		azufre.setCreativeTab(CreativeTabs.tabBlock);
+		//Marca un nombre interno para el bloque, este nombre no sera visto por el jugador.
+		azufre.setUnlocalizedName("Azufre");
+		//Esto marca el nivel necesario para farmear el bloque.
+		//La toolClass es una de estas: "pickaxe", "shovel", "axe" (Se pueden poner nombres de toolClass propios).
+		//El tier es: 0-Madera, 1-piedra, 2-hierro, 3-diamante.
+		azufre.setHarvestLevel("pickaxe", 1); 		
+		return azufre;
+	}
+
+}

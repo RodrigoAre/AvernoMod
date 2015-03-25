@@ -1,0 +1,11 @@
+package com.averno.bloque;
+
+import net.minecraft.block.material.Material;
+
+public class Azufre extends BaseBlock {
+	
+	protected Azufre(Material material) {
+		super(material);
+	}
+
+}

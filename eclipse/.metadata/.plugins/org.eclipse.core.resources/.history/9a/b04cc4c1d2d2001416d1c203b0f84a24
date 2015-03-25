@@ -1,0 +1,20 @@
+package com.averno.item;
+
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
+
+/**
+ * 
+ * @author darkraksis	
+ * Esta es una clase de objeto genérico de ejemplo, un objeto debe heredar de la clase Item.
+ */
+public class GenericItem extends Item {
+
+	public GenericItem() {
+		super();
+		setMaxStackSize(64);
+		setCreativeTab(CreativeTabs.tabMisc);
+		setUnlocalizedName("genericItem");
+	}
+	
+}

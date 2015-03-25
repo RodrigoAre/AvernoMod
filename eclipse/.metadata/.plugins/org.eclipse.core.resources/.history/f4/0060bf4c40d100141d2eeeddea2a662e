@@ -1,0 +1,14 @@
+package com.averno.base;
+
+import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.Mod.Instance;
+
+@Mod(modid = Averno.MODID, name = "Averno", version = Averno.VERSION)
+public class Averno {
+	
+	public static final String MODID = "Averno01";
+	public static final String VERSION = "0.0.0";
+	
+	@Instance(value = MODID)
+	public static Averno instance;
+}

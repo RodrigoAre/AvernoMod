@@ -1,0 +1,11 @@
+package com.averno.registro;
+
+import net.minecraft.item.Item;
+
+public class Registro {
+	public static Item item1;
+	
+	public static void registrar() {
+		
+	}
+}

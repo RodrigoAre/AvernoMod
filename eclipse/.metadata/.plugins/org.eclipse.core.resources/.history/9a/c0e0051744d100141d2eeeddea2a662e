@@ -1,0 +1,5 @@
+package com.averno.proxy;
+
+public class ClientProxy {
+
+}

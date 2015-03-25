@@ -1,0 +1,23 @@
+package com.averno.registro;
+
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
+
+import com.averno.item.GenericItem;
+
+import cpw.mods.fml.common.registry.GameRegistry;
+
+public class Registro {
+	public static Item item1;
+	
+	public static void iniciar() {
+		item1 = new GenericItem();		
+		item1.setMaxStackSize(64);
+		setCreativeTab(CreativeTabs.tabMisc);
+		item1.setUnlocalizedName("genericItem");
+	}
+	
+	public static void registrar() {
+		GameRegistry.registerItem(item1, "item1");
+	}
+}

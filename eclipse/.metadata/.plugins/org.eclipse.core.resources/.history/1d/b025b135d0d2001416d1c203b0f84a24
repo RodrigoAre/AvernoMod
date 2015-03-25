@@ -1,0 +1,9 @@
+package com.averno.item;
+
+import net.minecraft.item.Item;
+
+public class GenericItem extends Item {
+	setMaxStackSize(64);
+	setCreativeTab(CreativeTabs.tabMisc);
+	setUnlocalizedName("genericItem");
+}

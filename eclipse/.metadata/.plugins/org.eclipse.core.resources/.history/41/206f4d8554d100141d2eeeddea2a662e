@@ -1,0 +1,5 @@
+package com.averno.item;
+
+public class GenericItem {
+
+}
